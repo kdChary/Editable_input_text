@@ -19,25 +19,31 @@ class Input extends Component {
     return (
       <div className="main-container">
         <div className="app-container">
-          <h1 className="app-title">Editable Text Input</h1>
-          {isClicked ? (
-            <div className="display">
-              <p className="paragraph">{inputValue}</p>
+          <h3 className="app-title">Editable Text Input</h3>
+          <div className="hide-show">
+            {isClicked ? (
+              <div className="display">
+                <p className="paragraph">{inputValue}</p>
+              </div>
+            ) : (
+              <div className="hide-item">
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={this.inputValueChanged}
+                  className="input"
+                />
+              </div>
+            )}
+            <div className="button-card">
+              <button
+                className="button"
+                type="button"
+                onClick={this.toggleInput}
+              >
+                {isClicked ? 'Edit' : 'Save'}
+              </button>
             </div>
-          ) : (
-            <div className="hide-item">
-              <input
-                type="text"
-                value={inputValue}
-                onChange={this.inputValueChanged}
-                className="input"
-              />
-            </div>
-          )}
-          <div className="button-card">
-            <button className="button" type="button" onClick={this.toggleInput}>
-              {isClicked ? 'Edit' : 'Save'}
-            </button>
           </div>
         </div>
       </div>
