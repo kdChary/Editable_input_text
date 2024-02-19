@@ -19,6 +19,7 @@ class Input extends Component {
     return (
       <div className="main-container">
         <div className="app-container">
+          <h1 className="app-title">Editable Text Input</h1>
           {isClicked ? (
             <div className="display">
               <p className="paragraph">{inputValue}</p>
